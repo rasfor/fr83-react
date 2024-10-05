@@ -1,8 +1,25 @@
-import { configureStore } from '@reduxjs/toolkit';
-import tdoReducer from './features/todoSlice'
+import { makeObservable, observable, action } from "mobx"
+class TodoStore {
+  tasks = [];
 
-export default configureStore({
-  reducer: {
-    todo: tdoReducer
+  constructor() {
+    makeObservable(this, {
+      tasks: observable,
+      deleteLastTask: action,
+      addTask: action
+    })
   }
-})
+
+  deleteLastTask() {
+    this.tasks.pop();
+  }
+
+  addTask(task) {
+    this.tasks.push(task);
+  }
+}
+
+const todoStore = new TodoStore();
+
+export default todoStore;
+                        

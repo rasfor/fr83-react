@@ -1,31 +1,34 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { addTask, deleteLastTask } from '../store/features/todoSlice';
+import { inject, observer } from 'mobx-react';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-
-const Application = (props) => {
-
-    const tasks = useSelector(state =>state.todo.tasks);
-    const dispatch = useDispatch();
-
+const Application = ({ store }) => {
     const [value, setValue] = useState('');
     const onInputChange = (e) => {
         setValue(e.target.value);
     }
 
     const onAddClick = () => {
-        dispatch(addTask(value))
+        store.addTask(value)
     }
 
     const onDoneClick = () => {
-        dispatch(deleteLastTask())
+        store.deleteLastTask()
     }
     
     return (<>
     <h1> To do list</h1>
-    <ul>{tasks?.map(task => <li>{task}</li>)}</ul>
+    <ul>{store.tasks?.map(task => <li>{task}</li>)}</ul>
     <input onChange={onInputChange}/> <button onClick={onAddClick}> add new task</button><button onClick={onDoneClick}>done</button>
     </>)
 }
 
-export default Application;
+export default inject('store')(observer(Application));
+
+Application.propTypes  = {
+    store: PropTypes.shape({
+        tasks: PropTypes.array.isRequired,
+        addTask: PropTypes.func.isRequired,
+        deleteLastTask: PropTypes.func.isRequired,
+    }).isRequired
+}

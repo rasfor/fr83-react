@@ -3154,6 +3154,11 @@ mobx-react@^9.1.1:
   dependencies:
     mobx-react-lite "^4.0.7"
 
+mobx-state-tree@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-6.0.1.tgz#6892d238e3a8f7ad744138d5ea57637d408493fe"
+  integrity sha512-ZmC90+aaZj4Tvwz/G8kihAcZzejiHfkaIrwyneH7ACoZwWY2Gw5SP1mPPPQbVehsXJ8/OhDT4cPUvvzy//+Qog==
+
 mobx@^6.13.3:
   version "6.13.3"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.13.3.tgz#27f6171125fd4f737daec940c1d199c479f1b8c5"
@@ -3429,7 +3434,7 @@ prompts@^2.0.1:
 
 prop-types@^15.8.1:
   version "15.8.1"
-  resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
   dependencies:
     loose-envify "^1.4.0"
