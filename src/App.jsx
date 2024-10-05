@@ -1,13 +1,10 @@
-import Card from "./components/Card/Card";
-
-function App() {
+import Application from './application/Application'
+export default function App() {
   
   return (
-    <>
-      <Card bgColor='red' />
-      <Card />
-    </>
-  )
+    <div className='App'>
+      <Application />
+    </div>
+  );
 }
 
-export default App
